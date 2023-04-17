@@ -1,8 +1,9 @@
 <template>
   <div class="mx-auto max-w-4xl text-center">
-    <main class="mt-5 space-x-3">
+    <h1 class="text-3xl">Checkout these amazing concerts in Graz.</h1>
+    <main class="mt-5 space-x-3 mx-auto">
       <select
-        class="px-4 py-2 bg-slate-200 rounded-md"
+        class="px-4 py-2 bg-slate-200 rounded-md mb-3"
         name="artist"
         id="artist"
         @change="updateSelectedArtist($event.target.value)"
@@ -15,7 +16,7 @@
         </option>
       </select>
       <select
-        class="px-4 py-2 bg-slate-200 rounded-md"
+        class="px-4 py-2 bg-slate-200 rounded-md mb-3"
         name="location"
         id="location"
         @change="updateSelectedLocation($event.target.value)"
