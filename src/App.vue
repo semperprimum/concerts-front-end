@@ -1,30 +1,38 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div>
+    <header-view :headerText="headerText" />
+    <router-view name="filter"></router-view>
+    <router-view></router-view>
+  </div>
 </template>
+
+<script>
+import HeaderView from "@/components/HeaderView.vue";
+
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      concerts: [],
+      headerText: "",
+    };
+  },
+  components: {
+    HeaderView,
+  },
+  async mounted() {
+    let result = await axios.get("https://apic.polytech.kz/api/v1/concerts");
+    this.$store.state.concerts = result.data.concerts;
+    this.$store.commit("splitConcerts");
+  },
+};
+</script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
