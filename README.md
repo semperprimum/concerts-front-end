@@ -1,4 +1,4 @@
-# concerts-2
+# concerts
 
 ## Project setup
 ```
