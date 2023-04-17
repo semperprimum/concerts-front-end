@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="bg-slate-200 p-5 border-b border-t border-black text-lg mb-10">
+    <div
+      class="bg-slate-200 p-5 border-b border-t border-black text-lg max-[490px]:text-[11px] mb-10"
+    >
       <nav class="flex max-w-6xl mx-auto justify-between items-center">
         <div>
           <h1 class="cursor-pointer" @click="$router.push({ name: 'home' })">

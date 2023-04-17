@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-view :headerText="headerText" />
+    <header-view />
     <router-view name="filter"></router-view>
     <router-view></router-view>
   </div>
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       concerts: [],
-      headerText: "",
+      headerText: "asd",
     };
   },
   components: {

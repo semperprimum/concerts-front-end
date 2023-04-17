@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="Object.keys($store.state.filteredConcerts).length !== 0"
-      class="grid grid-cols-4 gap-5 max-w-4xl mx-auto mt-10"
+      class="grid grid-cols-4 max-[380px]:grid-cols-1 max-[620px]:grid-cols-2 max-[850px]:grid-cols-3 gap-5 max-w-4xl mx-auto mt-10"
     >
       <concert-card
         v-for="concert in $store.state.filteredConcerts"
